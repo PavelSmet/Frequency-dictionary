@@ -7,7 +7,7 @@ Freq_lib.prepare() #сортировка словаря в алфавитном 
 Freq_lib.spacedel() #удаление из словаря "переносы строки" (\n)
 """
 # Указываем путь к директории
-directory = "Vocabularys/"
+directory = "Dictionaries/"
 
 # Получаем список файлов
 files = os.listdir(directory)
