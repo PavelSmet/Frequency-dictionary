@@ -2,20 +2,20 @@ import string
 import matplotlib.pyplot as plt
 
 def spacedel():
-  with open('Vocabularys/Vocabulary.txt', 'r') as file_read:
+  with open('Dictionaries/Vocabulary.txt', 'r') as file_read:
     Words = file_read.readlines() #построчное считывание файла в список
   while '\n' in Words:
       Words.remove('\n')
-  with open('Vocabularys/Vocabulary.txt', 'w') as file:
+  with open('Dictionaries/Vocabulary.txt', 'w') as file:
     for word in Words:
       file.write(word)
   
 def prepare():
-  with open('Vocabularys/Vocabulary.txt', 'r') as file_read:
+  with open('Dictionaries/Vocabulary.txt', 'r') as file_read:
     lines = file_read.readlines()
   sort_list = list(lines)
   sort_list.sort()
-  with open('Vocabularys/Vocabulary.txt', 'w') as file_write:
+  with open('Dictionaries/Vocabulary.txt', 'w') as file_write:
     for word in sort_list:
       file_write.write(word)
   return sort_list
@@ -32,13 +32,13 @@ def input_str(text):
       tmp_word += text[i]
     if i == len(text) - 1: #добавляем слово в список Words в случае достижения конца строки
       Words.append(tmp_word)
-  with open('Vocabularys/Vocabulary.txt', 'a') as file:
+  with open('Dictionaries/Vocabulary.txt', 'a') as file:
     for word in Words:
       if len(word) >= 3:
         file.write(word + '\n')
 
 def input_from_file():
-  with open("Texts/text.txt", "r") as file_stream:
+  with open("Text/text.txt", "r") as file_stream:
     lines = file_stream.readlines() #построчное чтение файла в список
   #for i in range(len(lines)):
     #lines[i] = lines[i].strip() #с помощью функции strip мы лечили что-то, но не помним что (разделение строки на слова)
@@ -51,7 +51,7 @@ def input_from_file():
     #что такое функция! и что такое метод!
 
 def vfreq(Vocabulary_name): #функция создания часточного словаря python
-  with open ("Vocabularys/" + Vocabulary_name, 'r') as file_read:
+  with open ("Dictionaries/" + Vocabulary_name, 'r') as file_read:
     V = file_read.readlines()
   V = [line.rstrip() for line in V]
   V_key = []
