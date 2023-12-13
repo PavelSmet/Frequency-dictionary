@@ -2,7 +2,7 @@ import string
 import matplotlib.pyplot as plt
 
 def spacedel():
-  with open('Dictionaries/Vocabulary.txt', 'r') as file_read:
+  with open('Dictionaries/Vocabulary.txt', 'r', encoding = 'utf-8') as file_read:
     Words = file_read.readlines() #построчное считывание файла в список
   while '\n' in Words:
       Words.remove('\n')
@@ -11,7 +11,7 @@ def spacedel():
       file.write(word)
   
 def prepare():
-  with open('Dictionaries/Vocabulary.txt', 'r') as file_read:
+  with open('Dictionaries/Vocabulary.txt', 'r', encoding = 'utf-8') as file_read:
     lines = file_read.readlines()
   sort_list = list(lines)
   sort_list.sort()
@@ -38,7 +38,7 @@ def input_str(text):
         file.write(word + '\n')
 
 def input_from_file():
-  with open("Text/text.txt", "r") as file_stream:
+  with open("Text/text.txt", "r", encoding = 'utf-8') as file_stream:
     lines = file_stream.readlines() #построчное чтение файла в список
   #for i in range(len(lines)):
     #lines[i] = lines[i].strip() #с помощью функции strip мы лечили что-то, но не помним что (разделение строки на слова)
@@ -51,7 +51,7 @@ def input_from_file():
     #что такое функция! и что такое метод!
 
 def vfreq(Vocabulary_name): #функция создания часточного словаря python
-  with open ("Dictionaries/" + Vocabulary_name, 'r') as file_read:
+  with open ("Dictionaries/" + Vocabulary_name, 'r', encoding = 'utf-8') as file_read:
     V = file_read.readlines()
   V = [line.rstrip() for line in V]
   V_key = []
