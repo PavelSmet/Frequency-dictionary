@@ -1,0 +1,2 @@
+# Frequency-dictionary
+Educational project
